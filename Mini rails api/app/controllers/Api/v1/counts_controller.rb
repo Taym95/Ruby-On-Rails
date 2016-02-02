@@ -12,12 +12,9 @@ module Api
       end
 
       def create
-        count =params[:count]
-        if count == 1
-          respond_with Count.create(Count.last.count+1)
-        else
-          respond_with Count.create(Count.last.count-1)
-        end
+       
+        respond_with Count.create(params[:count])
+        
       end
 
       def update
