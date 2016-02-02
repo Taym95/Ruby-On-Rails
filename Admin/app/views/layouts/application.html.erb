@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shop</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+<ul class="nav nav-tabs">
+  
+  <div class="btn-group">
+	 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Primary <span class="caret"></span>
+	 </button> 
+	 <ul class="dropdown-menu">
+	 	  <% if current_user %>
+	 	    <li><%= link_to "Loug out",destroy_user_session_path, method: :delete %></li>
+	 	  <% else %>
+	 	    <li><%= link_to "Sign in",new_user_session_path %></li>
+	 	  <% end %>
+		  <li><a href="/users/sign_up">Sign up</a></li>
+	 </ul>
+ </div>
+ <button class="btn btn-info">danger</button>
+</ul>
+	<%= yield %>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    
+  </div>
+</nav>
+</div>
+
+</body>
+</html>
