@@ -1,0 +1,11 @@
+class CreateCounts < ActiveRecord::Migration
+  def change
+    create_table :counts do |t|
+
+      t.integer :action
+      t.integer :count
+
+      t.timestamps null: false
+    end
+  end
+end

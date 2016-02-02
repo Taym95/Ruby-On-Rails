@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Action:</strong>
+  <%= @count.action %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @count.count %>
+</p>
+
+<%= link_to 'Edit', edit_count_path(@count) %> |
+<%= link_to 'Back', counts_path %>
